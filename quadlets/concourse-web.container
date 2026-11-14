@@ -18,8 +18,11 @@ Environment=CONCOURSE_POSTGRES_HOST=localhost
 Environment=CONCOURSE_POSTGRES_USER=concourse_user
 Environment=CONCOURSE_POSTGRES_PASSWORD=concourse_pass
 Environment=CONCOURSE_POSTGRES_DATABASE=concourse
-Environment=CONCOURSE_ADD_LOCAL_USER=admin:admin
-Environment=CONCOURSE_MAIN_TEAM_LOCAL_USER=admin
+Environment=CONCOURSE_ADD_LOCAL_USER=test:test
+Environment=CONCOURSE_MAIN_TEAM_LOCAL_USER=test
+LogDriver=json-file
+LogOpt=max-size=10m
+LogOpt=max-file=5
 
 [Service]
 Restart=always
