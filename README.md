@@ -47,6 +47,8 @@ The deployment also mounts the host's `/etc/localtime` read-only into the contai
 
 ## Configuration and keys
 
+The quadlets provide default passwords (largely based on the Concourse web site) - update those to your local preferences.
+
 Concourse's cryptographic keys are stored on the host under:
 
 ```text
