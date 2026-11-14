@@ -1,0 +1,13 @@
+[Unit]
+Description=Concourse CI/CD pod
+
+[Pod]
+PodName=concourse
+PublishPort=8080:8080
+PublishPort=9102:9102
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

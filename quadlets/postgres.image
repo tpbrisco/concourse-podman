@@ -1,0 +1,3 @@
+[Image]
+Image=docker.io/library/postgres:18.7
+Policy=missing

@@ -1,0 +1,25 @@
+[Unit]
+Description=Concourse worker
+
+[Container]
+ContainerName=concourse-worker
+Image=concourse.image
+Pod=concourse.pod
+StartWithPod=true
+Exec=worker
+PodmanArgs=--privileged
+Volume=concourse-worker-state:/worker-state
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=/etc/concourse/keys/worker:/concourse-keys:z
+Environment=CONCOURSE_TSA_PUBLIC_KEY=/concourse-keys/tsa_host_key.pub
+Environment=CONCOURSE_TSA_WORKER_PRIVATE_KEY=/concourse-keys/worker_key
+Environment=CONCOURSE_TSA_HOST=localhost:2222
+Environment=CONCOURSE_GARDEN_DNS_PROXY_ENABLE=true
+Environment=CONCOURSE_RUNTIME=containerd
+StopSignal=SIGUSR2
+LogDriver=json-file
+LogOpt=max-size=10m
+LogOpt=max-file=5
+
+[Service]
+Restart=always
