@@ -1,0 +1,21 @@
+[Unit]
+Description=Concourse PostgreSQL database
+
+[Container]
+ContainerName=concourse-db
+Image=postgres.image
+Pod=concourse.pod
+Volume=/etc/localtime:/etc/localtime:ro
+Volume=concourse-db-data:/var/lib/postgresql
+Environment=POSTGRES_DB=concourse
+Environment=POSTGRES_USER=concourse_user
+Environment=POSTGRES_PASSWORD=concourse_pass
+LogDriver=json-file
+LogOpt=max-size=10m
+LogOpt=max-file=5
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target
