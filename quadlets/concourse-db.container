@@ -7,9 +7,7 @@ Image=postgres.image
 Pod=concourse.pod
 Volume=/etc/localtime:/etc/localtime:ro
 Volume=concourse-db-data:/var/lib/postgresql
-Environment=POSTGRES_DB=concourse
-Environment=POSTGRES_USER=concourse_user
-Environment=POSTGRES_PASSWORD=concourse_pass
+EnvironmentFile=/etc/concourse/postgres.env
 LogDriver=json-file
 LogOpt=max-size=10m
 LogOpt=max-file=5

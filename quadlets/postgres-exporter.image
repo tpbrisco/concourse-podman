@@ -1,0 +1,3 @@
+[Image]
+Image=quay.io/prometheuscommunity/postgres-exporter:latest
+Policy=missing

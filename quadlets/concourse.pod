@@ -5,6 +5,7 @@ Description=Concourse CI/CD pod
 PodName=concourse
 PublishPort=8080:8080
 PublishPort=9102:9102
+PublishPort=9187:9187
 
 [Service]
 Restart=always

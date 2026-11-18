@@ -84,9 +84,11 @@ Quadlet files are deployed to:
 
 The files are managed in this repository and copied into that directory by the deployment process.
 
-If you use it, add the CONCOURSE_ADD_LOCAL_USER and CONCOURSE_MAIN_TEAM_LOCAL_USER environment variables in
+If you use it, add the CONCOURSE_ADD_LOCAL_USER and CONCOURSE_MAIN_TEAM_LOCAL_USER environment variables, the POSTGRES passwords, and the POSTGRES prometheus configuration passwords  in
 ```text
 /etc/concourse/concourse.env
+/etc/concourse/postgres.env
+/etc/concourse/postgres-exporter.env
 ```
 
 After updating the deployed Quadlet files, reload systemd's generated units:

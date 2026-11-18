@@ -1,0 +1,18 @@
+[Unit]
+Description=Prometheus PostgreSQL exporter
+
+[Container]
+ContainerName=postgres-exporter
+Image=postgres-exporter.image
+Pod=concourse.pod
+StartWithPod=true
+EnvironmentFile=/etc/concourse/postgres-exporter.env
+LogDriver=json-file
+LogOpt=max-size=10m
+LogOpt=max-file=5
+
+[Service]
+Restart=always
+
+[Install]
+WantedBy=multi-user.target

@@ -18,6 +18,8 @@ Environment=CONCOURSE_POSTGRES_HOST=localhost
 Environment=CONCOURSE_POSTGRES_USER=concourse_user
 Environment=CONCOURSE_POSTGRES_PASSWORD=concourse_pass
 Environment=CONCOURSE_POSTGRES_DATABASE=concourse
+Environment=CONCOURSE_PROMETHEUS_BIND_IP="0.0.0.0"
+Environment=CONCOURSE_PROMETHEUS_BIND_PORT="9102"
 EnvironmentFile=/etc/concourse/concourse.env
 LogDriver=json-file
 LogOpt=max-size=10m
